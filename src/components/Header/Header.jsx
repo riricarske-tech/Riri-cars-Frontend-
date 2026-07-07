@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react'
 import {
   MdPhone,
@@ -14,6 +14,19 @@ import { company } from '../../data/company'
 import logo from '../../assets/logo/RiricarsLogo.png'
 
 const ease = [0.22, 1, 0.36, 1]
+
+// Hash links must stay plain anchors so in-page scrolling works; everything
+// else uses client-side <Link> navigation (no full page reloads).
+const NavAnchor = ({ href, children, ...props }) =>
+  href.includes('#') ? (
+    <a href={href} {...props}>
+      {children}
+    </a>
+  ) : (
+    <Link to={href} {...props}>
+      {children}
+    </Link>
+  )
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -120,13 +133,19 @@ export default function Header() {
       <nav className={`bg-dark-nav transition-all duration-300 ${scrolled ? 'shadow-nav' : ''}`}>
         <div className="max-w-container mx-auto px-6 flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 flex-shrink-0">
-            <img src={logo} alt="RIRI CARS" className="h-14 w-auto object-contain" />
+          <Link to="/" className="flex items-center gap-2 flex-shrink-0" aria-label="Riri Cars Ltd — home">
+            <img
+              src={logo}
+              alt="Riri Cars Ltd — used Japanese car dealership in Nairobi, Kenya"
+              width="56"
+              height="56"
+              className="h-14 w-auto object-contain"
+            />
             <div className="w-px h-14 bg-white/20 mx-1 hidden sm:block" />
             <span className="text-white/50 text-xs font-medium hidden sm:block leading-tight">
               Where Excellence<br />Meets Affordability
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <ul className="hidden lg:flex items-center gap-1">
@@ -137,7 +156,7 @@ export default function Header() {
                 onMouseEnter={() => link.children && setActiveDropdown(link.label)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <a
+                <NavAnchor
                   href={link.href}
                   aria-current={isActive(link.href) ? 'page' : undefined}
                   className={`flex items-center gap-1 text-sm font-medium px-3 py-2 rounded transition-colors border-b-2 ${
@@ -149,12 +168,13 @@ export default function Header() {
                   {link.label}
                   {link.children && (
                     <MdKeyboardArrowDown
+                      aria-hidden="true"
                       className={`text-base transition-transform duration-200 ${
                         activeDropdown === link.label ? 'rotate-180' : ''
                       }`}
                     />
                   )}
-                </a>
+                </NavAnchor>
                 <AnimatePresence>
                   {link.children && activeDropdown === link.label && (
                     <motion.div
@@ -165,13 +185,13 @@ export default function Header() {
                       className="absolute top-full left-0 mt-1 w-52 bg-white rounded shadow-card-hover py-1 z-50 origin-top"
                     >
                       {link.children.map((child) => (
-                        <a
+                        <Link
                           key={child.label}
-                          href={child.href}
+                          to={child.href}
                           className="block px-4 py-2.5 text-sm text-dark hover:bg-brand-low hover:text-primary transition-colors"
                         >
                           {child.label}
-                        </a>
+                        </Link>
                       ))}
                     </motion.div>
                   )}
@@ -191,9 +211,9 @@ export default function Header() {
               <FaWhatsapp className="text-green-400" />
               WhatsApp
             </a>
-            <a href="/cars" className="btn-primary text-xs py-2.5 px-5">
+            <Link to="/cars" className="btn-primary text-xs py-2.5 px-5">
               View Cars
-            </a>
+            </Link>
           </div>
 
           {/* Mobile toggle */}
@@ -247,7 +267,7 @@ export default function Header() {
               <div className="max-w-container mx-auto px-6 py-4 space-y-1">
                 {navLinks.map((link) => (
                   <div key={link.label}>
-                    <a
+                    <NavAnchor
                       href={link.href}
                       aria-current={isActive(link.href) ? 'page' : undefined}
                       className={`block px-3 py-2.5 rounded text-sm font-medium transition-colors border-l-2 ${
@@ -258,18 +278,18 @@ export default function Header() {
                       onClick={() => setMobileOpen(false)}
                     >
                       {link.label}
-                    </a>
+                    </NavAnchor>
                     {link.children && (
                       <div className="pl-4 space-y-1 mt-1">
                         {link.children.map((child) => (
-                          <a
+                          <Link
                             key={child.label}
-                            href={child.href}
+                            to={child.href}
                             className="block text-white/50 hover:text-white px-3 py-2 rounded text-xs transition-colors"
                             onClick={() => setMobileOpen(false)}
                           >
                             {child.label}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     )}
@@ -290,9 +310,9 @@ export default function Header() {
                   >
                     <FaWhatsapp /> WhatsApp Us
                   </a>
-                  <a href="/cars" className="btn-primary justify-center text-xs">
+                  <Link to="/cars" className="btn-primary justify-center text-xs">
                     View Cars
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>

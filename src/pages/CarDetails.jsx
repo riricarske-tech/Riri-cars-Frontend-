@@ -19,6 +19,8 @@ import useVehicles from '../hooks/useVehicles'
 import { company } from '../data/company'
 import CarCard from '../components/FeaturedCars/CarCard'
 import Skeleton from '../components/ui/Skeleton'
+import SEO from '../components/SEO'
+import { breadcrumbSchema, vehicleSchema } from '../lib/seo'
 
 const formatPrice = (price) => `KSh ${price.toLocaleString('en-KE')}`
 
@@ -89,13 +91,19 @@ export default function CarDetails() {
   if (!car || error) {
     return (
       <main className="container-main pt-28 md:pt-32 pb-24 text-center min-h-[60vh]">
+        <SEO
+          title="Vehicle Not Found | Riri Cars Ltd Nairobi"
+          description="This vehicle may have been sold or removed from stock. Browse our current inventory of used Japanese import cars for sale in Nairobi."
+          path={`/cars/${id}`}
+          noindex
+        />
         <h1 className="section-title mb-4">Vehicle Not Found</h1>
         <p className="text-muted mb-8">
           We couldn't find that vehicle — it may have been sold or removed from stock.
         </p>
-        <a href="/#featured" className="btn-primary inline-flex">
+        <Link to="/cars" className="btn-primary inline-flex">
           Browse Available Vehicles
-        </a>
+        </Link>
       </main>
     )
   }
@@ -123,21 +131,38 @@ export default function CarDetails() {
     { label: 'Stock Number', value: car.stockNumber },
   ]
 
+  const carName = `${car.year} ${car.make} ${car.model}`
+
   return (
     <main className="pt-28 md:pt-32 pb-8 bg-brand-bg">
+      <SEO
+        title={`${carName} ${car.trim ? `${car.trim} ` : ''}for Sale in Nairobi — ${formatPrice(car.price)} | Riri Cars`}
+        description={`Buy this ${car.status.toLowerCase()} ${carName} (${car.trim}) at Riri Cars, Kiambu Road, Nairobi. ${car.mileage.toLocaleString()} km, ${car.fuel}, ${car.transmission}, ${car.drive}. ${formatPrice(car.price)} — asset financing and trade-in available.`}
+        path={`/cars/${car.id}`}
+        image={car.gallery?.[0] || car.image}
+        type="product"
+        jsonLd={[
+          vehicleSchema(car),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Inventory', path: '/cars' },
+            { name: carName },
+          ]),
+        ]}
+      />
       <div className="container-main">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-1.5 py-5 text-xs text-muted uppercase tracking-wider">
+        <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 py-5 text-xs text-muted uppercase tracking-wider">
           <Link to="/" className="hover:text-primary transition-colors">
             Home
           </Link>
-          <MdChevronRight size={14} />
-          <a href="/#featured" className="hover:text-primary transition-colors">
+          <MdChevronRight size={14} aria-hidden="true" />
+          <Link to="/cars" className="hover:text-primary transition-colors">
             Inventory
-          </a>
-          <MdChevronRight size={14} />
-          <span className="text-dark font-semibold normal-case">
-            {car.year} {car.make} {car.model}
+          </Link>
+          <MdChevronRight size={14} aria-hidden="true" />
+          <span className="text-dark font-semibold normal-case" aria-current="page">
+            {carName}
           </span>
         </nav>
 
@@ -170,8 +195,10 @@ export default function CarDetails() {
               <div className="relative aspect-[16/10] bg-brand-low group">
                 <img
                   src={car.gallery[activeImage]}
-                  alt={`${car.year} ${car.make} ${car.model}`}
+                  alt={`${car.year} ${car.make} ${car.model} ${car.trim || ''} in ${car.exteriorColor} for sale at Riri Cars Nairobi — photo ${activeImage + 1} of ${car.gallery.length}`}
                   className="w-full h-full object-cover"
+                  fetchPriority="high"
+                  decoding="async"
                 />
                 {car.gallery.length > 1 && (
                   <>
@@ -207,7 +234,13 @@ export default function CarDetails() {
                         activeImage === i ? 'border-primary' : 'border-transparent hover:border-brand-border'
                       }`}
                     >
-                      <img src={src} alt={`View ${i + 1}`} className="w-full h-full object-cover" />
+                      <img
+                        src={src}
+                        alt={`${car.year} ${car.make} ${car.model} — thumbnail view ${i + 1}`}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                      />
                     </button>
                   ))}
                 </div>

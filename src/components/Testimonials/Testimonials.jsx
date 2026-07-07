@@ -4,6 +4,29 @@ import { testimonials, trustStats } from '../../data/testimonials'
 
 const ease = [0.22, 1, 0.36, 1]
 
+// Initials avatar — replaces stock profile photos so no real-person imagery
+// is implied for sample testimonials, and no third-party image requests are made.
+const AVATAR_BGS = ['bg-primary text-white', 'bg-accent text-dark-nav', 'bg-white/15 text-white']
+
+const initials = (name) =>
+  name
+    .split(' ')
+    .map((part) => part[0])
+    .slice(0, 2)
+    .join('')
+    .toUpperCase()
+
+const Avatar = ({ name, index }) => (
+  <span
+    aria-hidden="true"
+    className={`w-10 h-10 rounded-full border-2 border-primary flex items-center justify-center font-bold text-sm flex-shrink-0 ${
+      AVATAR_BGS[index % AVATAR_BGS.length]
+    }`}
+  >
+    {initials(name)}
+  </span>
+)
+
 const StarRating = ({ rating }) => (
   <div className="flex items-center gap-0.5">
     {Array.from({ length: 5 }, (_, i) =>
@@ -71,11 +94,7 @@ export default function Testimonials() {
               </p>
               <div className="w-full h-px bg-white/10 mb-4" />
               <div className="flex items-center gap-3">
-                <img
-                  src={t.avatar}
-                  alt={t.name}
-                  className="w-10 h-10 rounded-full object-cover border-2 border-primary"
-                />
+                <Avatar name={t.name} index={i} />
                 <div>
                   <p className="text-white font-semibold text-sm">{t.name}</p>
                   <p className="text-white/50 text-xs">{t.role}</p>

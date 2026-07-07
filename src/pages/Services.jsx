@@ -13,6 +13,26 @@ import {
 import { services } from '../data/services'
 import Stats from '../components/Stats/Stats'
 import CTA from '../components/CTA/CTA'
+import SEO from '../components/SEO'
+import { breadcrumbSchema, absoluteUrl, dealerRef } from '../lib/seo'
+
+const servicesListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Riri Cars Ltd — Automotive Services in Nairobi',
+  itemListElement: services.map((s, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'Service',
+      name: s.title,
+      description: s.description,
+      url: absoluteUrl('/services'),
+      provider: dealerRef,
+      areaServed: { '@type': 'Country', name: 'Kenya' },
+    },
+  })),
+}
 
 const iconMap = {
   MdDirectionsCar,
@@ -26,6 +46,15 @@ const iconMap = {
 export default function Services() {
   return (
     <main className="pt-20 md:pt-24 bg-brand-bg">
+      <SEO
+        title="Car Financing, Trade-In & Japan Import Services in Nairobi | Riri Cars Ltd"
+        description="Riri Cars offers asset financing through Dream Credit Limited, same-day trade-in valuations, direct car imports from Japan, insurance assistance, and after-sales support — all from our Kiambu Road showroom in Nairobi, Kenya."
+        path="/services"
+        jsonLd={[
+          servicesListSchema,
+          breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Services' }]),
+        ]}
+      />
       {/* Banner */}
       <section
         className="relative h-[260px] md:h-[300px] flex items-end overflow-hidden"
@@ -41,12 +70,12 @@ export default function Services() {
         <div className="absolute top-0 left-0 w-full h-1 bg-red-shine" />
         <div className="container-main pb-8 md:pb-10 relative z-10">
           <h1 className="text-white font-black text-4xl md:text-5xl tracking-tight mb-2">Our Services</h1>
-          <nav className="flex items-center gap-1.5 text-white/60 text-xs uppercase tracking-wider">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-white/60 text-xs uppercase tracking-wider">
             <Link to="/" className="hover:text-primary transition-colors">
               Home
             </Link>
-            <MdChevronRight size={14} />
-            <span className="text-white">Services</span>
+            <MdChevronRight size={14} aria-hidden="true" />
+            <span className="text-white" aria-current="page">Services</span>
           </nav>
         </div>
       </section>

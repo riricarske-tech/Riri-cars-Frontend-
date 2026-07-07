@@ -19,9 +19,10 @@ export default function VehicleCard({ car, view = 'grid' }) {
         <div className="relative w-full sm:w-56 h-44 sm:h-auto shrink-0 overflow-hidden bg-brand-low">
           <img
             src={car.image}
-            alt={`${car.year} ${car.make} ${car.model}`}
+            alt={`${car.year} ${car.make} ${car.model} ${car.trim || ''} for sale at Riri Cars Nairobi`.trim()}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
+            decoding="async"
           />
           {car.status === 'New' ? (
             <span className="badge-new absolute top-3 left-3">{car.status}</span>
@@ -71,9 +72,10 @@ export default function VehicleCard({ car, view = 'grid' }) {
       <div className="h-48 overflow-hidden bg-brand-low">
         <img
           src={car.image}
-          alt={`${car.year} ${car.make} ${car.model}`}
+          alt={`${car.year} ${car.make} ${car.model} ${car.trim || ''} for sale at Riri Cars Nairobi`.trim()}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           loading="lazy"
+          decoding="async"
         />
       </div>
       <div className="p-5 text-center">

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import {
   MdPhone,
   MdEmail,
@@ -8,6 +9,18 @@ import {
 } from 'react-icons/md'
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { company } from '../../data/company'
+
+// Hash links stay plain anchors for in-page scrolling; the rest use SPA navigation.
+const FooterAnchor = ({ href, className, children }) =>
+  href.includes('#') ? (
+    <a href={href} className={className}>
+      {children}
+    </a>
+  ) : (
+    <Link to={href} className={className}>
+      {children}
+    </Link>
+  )
 
 const quickLinks = [
   { label: 'Home', href: '/' },
@@ -98,13 +111,13 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {quickLinks.map(({ label, href }) => (
                 <li key={label}>
-                  <a
+                  <FooterAnchor
                     href={href}
                     className="flex items-center gap-2 text-white/50 hover:text-white text-sm transition-colors group"
                   >
                     <MdArrowForward className="text-primary text-xs opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" />
                     {label}
-                  </a>
+                  </FooterAnchor>
                 </li>
               ))}
             </ul>
@@ -119,13 +132,13 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {serviceLinks.map((label) => (
                 <li key={label}>
-                  <a
-                    href="/services"
+                  <Link
+                    to="/services"
                     className="flex items-center gap-2 text-white/50 hover:text-white text-sm transition-colors group"
                   >
                     <MdArrowForward className="text-primary text-xs opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" />
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -141,7 +154,7 @@ export default function Footer() {
               {/* Address */}
               <li className="flex items-start gap-3">
                 <MdLocationOn className="text-primary text-lg flex-shrink-0 mt-0.5" />
-                <div>
+                <address className="not-italic">
                   <p className="text-white/70 text-sm leading-relaxed">
                     {company.location.street}
                   </p>
@@ -157,7 +170,7 @@ export default function Footer() {
                   >
                     <MdMap size={12} /> Get Directions
                   </a>
-                </div>
+                </address>
               </li>
 
               {/* Phone — official number */}
@@ -216,15 +229,12 @@ export default function Footer() {
             © {new Date().getFullYear()} {company.name}. All rights reserved. · {company.location.poBox}
           </p>
           <div className="flex items-center gap-4">
-            {['Privacy Policy', 'Terms of Service'].map((label) => (
-              <a
-                key={label}
-                href="#"
-                className="text-white/30 hover:text-white/60 text-xs transition-colors"
-              >
-                {label}
-              </a>
-            ))}
+            <Link to="/about" className="text-white/30 hover:text-white/60 text-xs transition-colors">
+              About Us
+            </Link>
+            <Link to="/contact" className="text-white/30 hover:text-white/60 text-xs transition-colors">
+              Contact
+            </Link>
           </div>
         </div>
       </div>

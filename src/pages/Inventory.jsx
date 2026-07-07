@@ -8,9 +8,10 @@ import {
   MdViewList,
 } from 'react-icons/md'
 import useVehicles from '../hooks/useVehicles'
-import { company } from '../data/company'
 import VehicleCard from '../components/Inventory/VehicleCard'
 import VehicleCardSkeleton from '../components/Inventory/VehicleCardSkeleton'
+import SEO from '../components/SEO'
+import { breadcrumbSchema, vehicleListSchema } from '../lib/seo'
 
 const formatPrice = (price) => `KSh ${price.toLocaleString('en-KE')}`
 
@@ -155,6 +156,15 @@ export default function Inventory() {
 
   return (
     <main className="pt-20 md:pt-24 bg-brand-bg">
+      <SEO
+        title="Used Cars for Sale in Nairobi, Kenya — Browse Inventory | Riri Cars Ltd"
+        description="Browse quality used Japanese import cars for sale in Nairobi at Riri Cars, Kiambu Road. Toyota, Mazda, Subaru, Honda, Nissan hatchbacks, sedans & SUVs with asset financing and trade-in options."
+        path="/cars"
+        jsonLd={[
+          breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Inventory' }]),
+          ...(vehicles.length ? [vehicleListSchema(vehicles)] : []),
+        ]}
+      />
       {/* Banner */}
       <section
         className="relative h-[260px] md:h-[300px] flex items-end overflow-hidden"
@@ -169,13 +179,15 @@ export default function Inventory() {
       >
         <div className="absolute top-0 left-0 w-full h-1 bg-red-shine" />
         <div className="container-main pb-8 md:pb-10 relative z-10">
-          <h1 className="text-white font-black text-4xl md:text-5xl tracking-tight mb-2">Vehicles</h1>
-          <nav className="flex items-center gap-1.5 text-white/60 text-xs uppercase tracking-wider">
+          <h1 className="text-white font-black text-4xl md:text-5xl tracking-tight mb-2">
+            Cars for Sale in Nairobi
+          </h1>
+          <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-white/60 text-xs uppercase tracking-wider">
             <Link to="/" className="hover:text-primary transition-colors">
               Home
             </Link>
-            <MdChevronRight size={14} />
-            <span className="text-white">Inventory</span>
+            <MdChevronRight size={14} aria-hidden="true" />
+            <span className="text-white" aria-current="page">Inventory</span>
           </nav>
         </div>
       </section>
@@ -206,6 +218,7 @@ export default function Inventory() {
                 value={filters.q}
                 onChange={(e) => setFilter('q')(e.target.value)}
                 placeholder="Year, make, model..."
+                aria-label="Search vehicles by year, make, or model"
                 className="input-field pr-10"
               />
               <MdSearch className="absolute right-3 top-1/2 -translate-y-1/2 text-muted" />
@@ -222,6 +235,7 @@ export default function Inventory() {
               step={50000}
               value={maxPrice}
               onChange={(e) => setMaxPrice(Number(e.target.value))}
+              aria-label="Maximum price in Kenyan Shillings"
               className="w-full accent-primary"
             />
             <p className="text-xs font-semibold text-muted mt-2">
@@ -404,11 +418,13 @@ export default function Inventory() {
 
           {/* Pagination */}
           {totalPages > 1 && (
-            <div className="mt-10 flex justify-center items-center gap-2 text-sm font-semibold">
+            <nav aria-label="Inventory pages" className="mt-10 flex justify-center items-center gap-2 text-sm font-semibold">
               {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
                 <button
                   key={p}
                   onClick={() => setPage(p)}
+                  aria-label={`Go to page ${p}`}
+                  aria-current={currentPage === p ? 'page' : undefined}
                   className={`w-10 h-10 flex items-center justify-center border transition-all ${
                     currentPage === p
                       ? 'bg-primary text-white border-primary'
@@ -418,7 +434,7 @@ export default function Inventory() {
                   {p}
                 </button>
               ))}
-            </div>
+            </nav>
           )}
         </section>
       </div>

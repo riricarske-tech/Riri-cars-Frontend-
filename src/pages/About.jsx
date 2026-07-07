@@ -10,6 +10,8 @@ import {
 } from 'react-icons/md'
 import { FaWhatsapp } from 'react-icons/fa'
 import { company } from '../data/company'
+import SEO from '../components/SEO'
+import { breadcrumbSchema, absoluteUrl } from '../lib/seo'
 
 const principles = [
   {
@@ -37,16 +39,31 @@ const principles = [
 export default function About() {
   return (
     <main className="pt-20 md:pt-24 bg-brand-bg">
+      <SEO
+        title="About Riri Cars Ltd — Trusted Used Car Dealership in Nairobi Since 2010"
+        description="Riri Cars Ltd has imported and sold quality used Japanese vehicles in Nairobi since 2010. Based on Kiambu Road at Fourways Junction, with 54K+ Facebook followers and a 90% customer recommendation rate."
+        path="/about"
+        jsonLd={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'AboutPage',
+            name: 'About Riri Cars Ltd.',
+            url: absoluteUrl('/about'),
+            mainEntity: { '@id': `${absoluteUrl('/')}#dealer` },
+          },
+          breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'About' }]),
+        ]}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden bg-white">
         <MdSpeed className="absolute inset-0 m-auto text-brand-low pointer-events-none" size={900} />
         <div className="container-main py-14 md:py-20 relative z-10">
-          <nav className="flex items-center gap-1.5 text-muted text-xs uppercase tracking-wider mb-6">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-muted text-xs uppercase tracking-wider mb-6">
             <Link to="/" className="hover:text-primary transition-colors">
               Home
             </Link>
-            <MdChevronRight size={14} />
-            <span className="text-dark font-semibold">About</span>
+            <MdChevronRight size={14} aria-hidden="true" />
+            <span className="text-dark font-semibold" aria-current="page">About</span>
           </nav>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
             <div>
@@ -64,8 +81,10 @@ export default function About() {
               <div className="absolute -inset-3 bg-primary/5 rounded-xl" />
               <img
                 src="https://images.unsplash.com/photo-1669691101370-9ee9ee0782dc?w=1200&q=85&auto=format&fit=crop"
-                alt="Riri Cars showroom vehicle"
+                alt="Quality used Japanese import vehicle at the Riri Cars showroom, Kiambu Road, Nairobi"
                 className="relative z-10 w-full h-[380px] md:h-[460px] object-cover rounded-lg shadow-card-hover"
+                fetchPriority="high"
+                decoding="async"
               />
             </div>
           </div>
@@ -78,8 +97,10 @@ export default function About() {
           <div className="relative">
             <img
               src="https://images.unsplash.com/photo-1668415759930-5a9dbe80c488?w=800&q=85&auto=format&fit=crop"
-              alt="Riri Cars Showroom on Kiambu Road, Nairobi"
+              alt="Riri Cars showroom on Kiambu Road at Fourways Junction, Nairobi"
               className="w-full aspect-[4/5] object-cover rounded shadow-card"
+              loading="lazy"
+              decoding="async"
             />
             <div className="absolute -bottom-6 -right-4 lg:-right-6 bg-primary rounded p-5 shadow-red-glow text-center hidden sm:block">
               <p className="text-white font-black text-4xl leading-none">10+</p>

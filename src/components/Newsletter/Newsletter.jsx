@@ -96,9 +96,12 @@ export default function Newsletter() {
                     <MdEmail className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted text-lg" />
                     <input
                       type="email"
+                      name="email"
+                      autoComplete="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Your email address"
+                      aria-label="Email address for newsletter"
                       required
                       className="w-full bg-white/10 border border-white/20 text-white placeholder:text-white/40 text-sm px-4 py-3 pl-10 rounded focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                     />

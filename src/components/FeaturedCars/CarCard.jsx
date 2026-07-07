@@ -26,9 +26,10 @@ export default function CarCard({ car }) {
       >
         <img
           src={car.image}
-          alt={`${car.year} ${car.make} ${car.model}`}
+          alt={`${car.year} ${car.make} ${car.model} ${car.trim || ''} in ${car.exteriorColor} — used ${car.bodyType} for sale in Nairobi`.trim()}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
+          decoding="async"
         />
         {/* Condition badge */}
         <div className="absolute top-3 left-3 flex flex-col gap-1">
@@ -52,7 +53,8 @@ export default function CarCard({ car }) {
             setLiked(!liked)
           }}
           className="absolute top-3 right-3 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow transition-all"
-          aria-label="Toggle wishlist"
+          aria-label={`${liked ? 'Remove' : 'Add'} ${car.year} ${car.make} ${car.model} ${liked ? 'from' : 'to'} wishlist`}
+          aria-pressed={liked}
           whileTap={shouldReduce ? {} : { scale: 0.85 }}
           transition={{ duration: 0.12 }}
         >

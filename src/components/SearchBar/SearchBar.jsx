@@ -13,6 +13,7 @@ const SelectField = ({ label, options, value, onChange }) => (
         className="select-field pr-8"
         value={value}
         onChange={(e) => onChange(e.target.value)}
+        aria-label={label}
       >
         <option value="">All {label}s</option>
         {options.map((opt) => (

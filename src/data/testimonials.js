@@ -16,7 +16,6 @@ export const testimonials = [
     rating: 5,
     text:
       'I got my Toyota Corolla Axio Hybrid from Riri Cars and the process was incredibly smooth. They arranged asset financing within two days, and the car was exactly as described. Highly recommend them!',
-    avatar: 'https://i.pravatar.cc/80?img=12',
     verified: false, // SAMPLE — not a verified direct quote
   },
   {
@@ -26,7 +25,6 @@ export const testimonials = [
     rating: 5,
     text:
       'Riri Cars is conveniently located right off Kiambu Road. I traded in my old car and walked away with a Honda Fit Hybrid the same day. The team was honest about pricing and the whole experience was stress-free.',
-    avatar: 'https://i.pravatar.cc/80?img=47',
     verified: false,
   },
   {
@@ -36,7 +34,6 @@ export const testimonials = [
     rating: 5,
     text:
       'I was looking for a Toyota Fielder and Riri Cars had the best price on Kiambu Road. They even showed me the Japanese auction sheet to confirm the car\'s history. That level of transparency is rare. Will buy from them again!',
-    avatar: 'https://i.pravatar.cc/80?img=33',
     verified: false,
   },
 ]

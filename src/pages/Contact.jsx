@@ -12,6 +12,8 @@ import {
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { SiTiktok } from 'react-icons/si'
 import { company } from '../data/company'
+import SEO from '../components/SEO'
+import { breadcrumbSchema, absoluteUrl } from '../lib/seo'
 
 const infoCards = [
   {
@@ -58,6 +60,21 @@ export default function Contact() {
 
   return (
     <main className="pt-24 md:pt-28 bg-brand-bg">
+      <SEO
+        title="Contact Riri Cars Ltd — Car Dealership on Kiambu Road, Nairobi | +254 729 003 333"
+        description="Visit Riri Cars at Kiambu Road, Fourways Junction, Nairobi (behind The Fuse Club). Call or WhatsApp +254 729 003 333, email info@riricars.co.ke. Open Mon–Fri 7 AM–10 PM, Sat 8 AM–5 PM."
+        path="/contact"
+        jsonLd={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'ContactPage',
+            name: 'Contact Riri Cars Ltd.',
+            url: absoluteUrl('/contact'),
+            mainEntity: { '@id': `${absoluteUrl('/')}#dealer` },
+          },
+          breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Contact' }]),
+        ]}
+      />
       {/* Heading */}
       <section className="container-main py-10 md:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
@@ -97,7 +114,10 @@ export default function Contact() {
                 <input
                   required
                   type="text"
+                  name="name"
+                  autoComplete="name"
                   placeholder="Your Name*"
+                  aria-label="Your name"
                   value={form.name}
                   onChange={setField('name')}
                   className="input-field"
@@ -105,7 +125,10 @@ export default function Contact() {
                 <input
                   required
                   type="email"
+                  name="email"
+                  autoComplete="email"
                   placeholder="Email Address*"
+                  aria-label="Email address"
                   value={form.email}
                   onChange={setField('email')}
                   className="input-field"
@@ -115,7 +138,10 @@ export default function Contact() {
                 <input
                   required
                   type="tel"
+                  name="phone"
+                  autoComplete="tel"
                   placeholder="Phone Number*"
+                  aria-label="Phone number"
                   value={form.phone}
                   onChange={setField('phone')}
                   className="input-field"
@@ -123,7 +149,9 @@ export default function Contact() {
                 <input
                   required
                   type="text"
+                  name="subject"
                   placeholder="Subject*"
+                  aria-label="Subject"
                   value={form.subject}
                   onChange={setField('subject')}
                   className="input-field"
@@ -131,7 +159,9 @@ export default function Contact() {
               </div>
               <textarea
                 rows={6}
+                name="message"
                 placeholder="Write a Message"
+                aria-label="Your message"
                 value={form.message}
                 onChange={setField('message')}
                 className="input-field resize-none"
@@ -166,13 +196,13 @@ export default function Contact() {
                 <div className="space-y-6">
                   <div className="flex gap-3">
                     <MdLocationOn className="text-primary text-xl flex-shrink-0 mt-0.5" />
-                    <p className="text-muted leading-relaxed">
+                    <address className="text-muted leading-relaxed not-italic">
                       {company.location.street}
                       <br />
                       {company.location.landmark}
                       <br />
                       {company.location.area}
-                    </p>
+                    </address>
                   </div>
                   <div className="flex gap-3">
                     <MdEmail className="text-primary text-xl flex-shrink-0 mt-0.5" />

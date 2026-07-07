@@ -76,9 +76,10 @@ export default function RecentlySold() {
               <div className="relative overflow-hidden aspect-[4/3] bg-brand-low flex-shrink-0">
                 <img
                   src={car.image}
-                  alt={`${car.year} ${car.make} ${car.model}`}
+                  alt={`${car.year} ${car.make} ${car.model} — recently sold by Riri Cars Nairobi`}
                   className="w-full h-full object-cover grayscale-[30%]"
                   loading="lazy"
+                  decoding="async"
                 />
                 <span className="absolute top-3 left-3 bg-dark text-white text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded-full flex items-center gap-1.5 shadow">
                   <MdSell size={12} className="text-primary" />
