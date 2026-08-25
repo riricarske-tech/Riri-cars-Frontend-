@@ -1,16 +1,16 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import {
   MdCalendarToday,
-  MdSpeed,
+  MdBuild,
   MdLocalGasStation,
   MdSettings,
   MdArrowForward,
-} from 'react-icons/md'
+} from "react-icons/md";
 
-const formatPrice = (price) => `KSh ${price.toLocaleString('en-KE')}`
+const formatPrice = (price) => `KSh ${price.toLocaleString("en-KE")}`;
 
-export default function VehicleCard({ car, view = 'grid' }) {
-  if (view === 'list') {
+export default function VehicleCard({ car, view = "grid" }) {
+  if (view === "list") {
     return (
       <Link
         to={`/cars/${car.id}`}
@@ -19,15 +19,19 @@ export default function VehicleCard({ car, view = 'grid' }) {
         <div className="relative w-full sm:w-56 h-44 sm:h-auto shrink-0 overflow-hidden bg-brand-low">
           <img
             src={car.image}
-            alt={`${car.year} ${car.make} ${car.model} ${car.trim || ''} for sale at Riri Cars Nairobi`.trim()}
+            alt={`${car.year} ${car.make} ${car.model} ${car.trim || ""} for sale at Riri Cars Nairobi`.trim()}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
             decoding="async"
           />
-          {car.status === 'New' ? (
-            <span className="badge-new absolute top-3 left-3">{car.status}</span>
+          {car.status === "New" ? (
+            <span className="badge-new absolute top-3 left-3">
+              {car.status}
+            </span>
           ) : (
-            <span className="badge-used absolute top-3 left-3">{car.status}</span>
+            <span className="badge-used absolute top-3 left-3">
+              {car.status}
+            </span>
           )}
         </div>
         <div className="flex-1 p-5 flex flex-col sm:flex-row sm:items-center gap-4">
@@ -38,13 +42,14 @@ export default function VehicleCard({ car, view = 'grid' }) {
             <p className="text-muted text-sm mb-2">{car.trim}</p>
             <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted">
               <span className="flex items-center gap-1">
-                <MdSpeed className="text-primary" /> {car.mileage.toLocaleString()} km
+                <MdBuild className="text-primary" /> {car.engine || "N/A"}
               </span>
               <span className="flex items-center gap-1">
                 <MdLocalGasStation className="text-primary" /> {car.fuel}
               </span>
               <span className="flex items-center gap-1">
-                <MdSettings className="text-primary" /> {car.transmission.split(' ')[0]}
+                <MdSettings className="text-primary" />{" "}
+                {car.transmission.split(" ")[0]}
               </span>
             </div>
           </div>
@@ -56,7 +61,7 @@ export default function VehicleCard({ car, view = 'grid' }) {
           </div>
         </div>
       </Link>
-    )
+    );
   }
 
   return (
@@ -64,15 +69,19 @@ export default function VehicleCard({ car, view = 'grid' }) {
       to={`/cars/${car.id}`}
       className="group bg-white border border-brand-border hover:shadow-card-hover transition-all duration-300 relative flex flex-col"
     >
-      {car.status === 'New' ? (
-        <span className="badge-new absolute top-4 left-4 z-10">{car.status}</span>
+      {car.status === "New" ? (
+        <span className="badge-new absolute top-4 left-4 z-10">
+          {car.status}
+        </span>
       ) : (
-        <span className="badge-used absolute top-4 left-4 z-10">{car.status}</span>
+        <span className="badge-used absolute top-4 left-4 z-10">
+          {car.status}
+        </span>
       )}
       <div className="h-48 overflow-hidden bg-brand-low">
         <img
           src={car.image}
-          alt={`${car.year} ${car.make} ${car.model} ${car.trim || ''} for sale at Riri Cars Nairobi`.trim()}
+          alt={`${car.year} ${car.make} ${car.model} ${car.trim || ""} for sale at Riri Cars Nairobi`.trim()}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           loading="lazy"
           decoding="async"
@@ -90,9 +99,9 @@ export default function VehicleCard({ car, view = 'grid' }) {
           <MdCalendarToday size={14} className="text-primary" /> {car.year}
         </div>
         <div className="flex items-center justify-center gap-1.5 py-3">
-          <MdSpeed size={14} className="text-primary" /> {car.mileage.toLocaleString()} km
+          <MdBuild size={14} className="text-primary" /> {car.engine || "N/A"}
         </div>
       </div>
     </Link>
-  )
+  );
 }

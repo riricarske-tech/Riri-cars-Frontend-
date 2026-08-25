@@ -57,4 +57,5 @@ export const bodyTypes = [
   "SUV",
   "Van",
   "Pickup",
+  "MPV",
 ];
