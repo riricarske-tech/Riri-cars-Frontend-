@@ -9,9 +9,11 @@ export default defineConfig({
       "966d-41-212-115-191.ngrok-free.app",
       "8090-41-212-115-191.ngrok-free.app",
       "localhost:3030",
+      "riri-cars-ke-backend-3.vercel.app",
+      "api.riricars.co.ke",
     ],
   },
   preview: {
-    allowedHosts: ["riri-cars.onrender.com"],
+    allowedHosts: ["riri-cars.onrender.com", "api.riricars.co.ke"],
   },
 });
