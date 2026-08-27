@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
 import {
   MdChevronRight,
   MdChevronLeft,
@@ -12,36 +12,36 @@ import {
   MdDirectionsCar,
   MdInfoOutline,
   MdChecklist,
-} from 'react-icons/md'
-import { FaWhatsapp } from 'react-icons/fa'
-import useVehicle from '../hooks/useVehicle'
-import useVehicles from '../hooks/useVehicles'
-import { company } from '../data/company'
-import CarCard from '../components/FeaturedCars/CarCard'
-import Skeleton from '../components/ui/Skeleton'
-import SEO from '../components/SEO'
-import { breadcrumbSchema, vehicleSchema } from '../lib/seo'
+} from "react-icons/md";
+import { FaWhatsapp } from "react-icons/fa";
+import useVehicle from "../hooks/useVehicle";
+import useVehicles from "../hooks/useVehicles";
+import { company } from "../data/company";
+import CarCard from "../components/FeaturedCars/CarCard";
+import Skeleton from "../components/ui/Skeleton";
+import SEO from "../components/SEO";
+import { breadcrumbSchema, vehicleSchema } from "../lib/seo";
 
-const formatPrice = (price) => `KSh ${price.toLocaleString('en-KE')}`
+const formatPrice = (price) => `KSh ${price.toLocaleString("en-KE")}`;
 
 const TABS = [
-  { label: 'Overview', icon: MdInfoOutline },
-  { label: 'Features & Options', icon: MdChecklist },
-  { label: 'Location', icon: MdLocationOn },
-]
+  { label: "Overview", icon: MdInfoOutline },
+  { label: "Features & Options", icon: MdChecklist },
+  { label: "Location", icon: MdLocationOn },
+];
 
 export default function CarDetails() {
-  const { id } = useParams()
-  const { vehicle: car, loading, error } = useVehicle(id)
-  const { vehicles } = useVehicles()
-  const [activeTab, setActiveTab] = useState(TABS[0])
-  const [activeImage, setActiveImage] = useState(0)
+  const { id } = useParams();
+  const { vehicle: car, loading, error } = useVehicle(id);
+  const { vehicles } = useVehicles();
+  const [activeTab, setActiveTab] = useState(TABS[0]);
+  const [activeImage, setActiveImage] = useState(0);
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-    setActiveTab(TABS[0].label)
-    setActiveImage(0)
-  }, [id])
+    window.scrollTo(0, 0);
+    setActiveTab(TABS[0].label);
+    setActiveImage(0);
+  }, [id]);
 
   if (loading) {
     return (
@@ -85,7 +85,7 @@ export default function CarDetails() {
           </div>
         </div>
       </main>
-    )
+    );
   }
 
   if (!car || error) {
@@ -99,60 +99,69 @@ export default function CarDetails() {
         />
         <h1 className="section-title mb-4">Vehicle Not Found</h1>
         <p className="text-muted mb-8">
-          We couldn't find that vehicle — it may have been sold or removed from stock.
+          We couldn't find that vehicle — it may have been sold or removed from
+          stock.
         </p>
         <Link to="/cars" className="btn-primary inline-flex">
           Browse Available Vehicles
         </Link>
       </main>
-    )
+    );
   }
 
   const whatsappMessage = encodeURIComponent(
-    `Hi Riri Cars, I'm interested in the ${car.year} ${car.make} ${car.model} (${car.trim}) — Stock #${car.stockNumber}, listed at ${formatPrice(car.price)}.`
-  )
-  const whatsappHref = `https://wa.me/${company.contact.whatsappBare.replace('+', '')}?text=${whatsappMessage}`
+    `Hi Riri Cars, I'm interested in the ${car.year} ${car.make} ${car.model} (${car.trim}) — Stock #${car.stockNumber}, listed at ${formatPrice(car.price)}.`,
+  );
+  const whatsappHref = `https://wa.me/${company.contact.whatsappBare.replace("+", "")}?text=${whatsappMessage}`;
 
-  const related = vehicles.filter((c) => c.id !== car.id && c.bodyType === car.bodyType)
-  const relatedFinal = (related.length > 0 ? related : vehicles.filter((c) => c.id !== car.id)).slice(0, 4)
+  const related = vehicles.filter(
+    (c) => c.id !== car.id && c.bodyType === car.bodyType,
+  );
+  const relatedFinal = (
+    related.length > 0 ? related : vehicles.filter((c) => c.id !== car.id)
+  ).slice(0, 4);
 
   const specs = [
-    { label: 'Year', value: car.year },
-    { label: 'Make', value: car.make },
-    { label: 'Model', value: car.model },
-    { label: 'Trim', value: car.trim },
-    { label: 'Mileage', value: `${car.mileage.toLocaleString()} km` },
-    { label: 'Transmission', value: car.transmission },
-    { label: 'Engine', value: car.engine },
-    { label: 'Drivetrain', value: car.drive },
-    { label: 'Body Type', value: car.bodyType },
-    { label: 'Exterior Color', value: car.exteriorColor },
-    { label: 'Interior Color', value: car.interiorColor },
-    { label: 'Stock Number', value: car.stockNumber },
-  ]
+    { label: "Year", value: car.year },
+    { label: "Make", value: car.make },
+    { label: "Model", value: car.model },
+    { label: "Trim", value: car.trim },
+    { label: "Mileage", value: `${car.mileage.toLocaleString()} km` },
+    { label: "Transmission", value: car.transmission },
+    { label: "Engine", value: car.engine },
+    { label: "Drivetrain", value: car.drive },
+    { label: "Body Type", value: car.bodyType },
+    { label: "Exterior Color", value: car.exteriorColor },
+    { label: "Interior Color", value: car.interiorColor },
+    { label: "Stock Number", value: car.stockNumber },
+  ];
 
-  const carName = `${car.year} ${car.make} ${car.model}`
+  const carName = `${car.year} ${car.make} ${car.model}`;
 
   return (
     <main className="pt-28 md:pt-32 pb-8 bg-brand-bg">
       <SEO
-        title={`${carName} ${car.trim ? `${car.trim} ` : ''}for Sale in Nairobi — ${formatPrice(car.price)} | Riri Cars`}
+        title={`${carName} ${car.trim ? `${car.trim} ` : ""}for Sale in Nairobi — ${formatPrice(car.price)} | Riri Cars`}
         description={`Buy this ${car.status.toLowerCase()} ${carName} (${car.trim}) at Riri Cars, Kiambu Road, Nairobi. ${car.mileage.toLocaleString()} km, ${car.fuel}, ${car.transmission}, ${car.drive}. ${formatPrice(car.price)} — asset financing and trade-in available.`}
         path={`/cars/${car.id}`}
         image={car.gallery?.[0] || car.image}
+        imageAlt={`${carName} for sale at Riri Cars Ltd in Nairobi`}
         type="product"
         jsonLd={[
           vehicleSchema(car),
           breadcrumbSchema([
-            { name: 'Home', path: '/' },
-            { name: 'Inventory', path: '/cars' },
+            { name: "Home", path: "/" },
+            { name: "Inventory", path: "/cars" },
             { name: carName },
           ]),
         ]}
       />
       <div className="container-main">
         {/* Breadcrumb */}
-        <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 py-5 text-xs text-muted uppercase tracking-wider">
+        <nav
+          aria-label="Breadcrumb"
+          className="flex items-center gap-1.5 py-5 text-xs text-muted uppercase tracking-wider"
+        >
           <Link to="/" className="hover:text-primary transition-colors">
             Home
           </Link>
@@ -161,7 +170,10 @@ export default function CarDetails() {
             Inventory
           </Link>
           <MdChevronRight size={14} aria-hidden="true" />
-          <span className="text-dark font-semibold normal-case" aria-current="page">
+          <span
+            className="text-dark font-semibold normal-case"
+            aria-current="page"
+          >
             {carName}
           </span>
         </nav>
@@ -172,14 +184,15 @@ export default function CarDetails() {
             {/* Mobile title/price */}
             <div className="md:hidden">
               <div className="flex items-center gap-2 mb-2">
-                {car.status === 'New' ? (
+                {car.status === "New" ? (
                   <span className="badge-new">{car.status}</span>
                 ) : (
                   <span className="badge-used">{car.status}</span>
                 )}
                 {car.condition && (
                   <span className="bg-dark-nav text-white/80 text-xs font-semibold px-2 py-0.5 rounded-full flex items-center gap-1">
-                    <MdVerified size={11} className="text-accent" /> {car.condition}
+                    <MdVerified size={11} className="text-accent" />{" "}
+                    {car.condition}
                   </span>
                 )}
               </div>
@@ -195,7 +208,7 @@ export default function CarDetails() {
               <div className="relative aspect-[16/10] bg-brand-low group">
                 <img
                   src={car.gallery[activeImage]}
-                  alt={`${car.year} ${car.make} ${car.model} ${car.trim || ''} in ${car.exteriorColor} for sale at Riri Cars Nairobi — photo ${activeImage + 1} of ${car.gallery.length}`}
+                  alt={`${car.year} ${car.make} ${car.model} ${car.trim || ""} in ${car.exteriorColor} for sale at Riri Cars Nairobi — photo ${activeImage + 1} of ${car.gallery.length}`}
                   className="w-full h-full object-cover"
                   fetchPriority="high"
                   decoding="async"
@@ -204,7 +217,10 @@ export default function CarDetails() {
                   <>
                     <button
                       onClick={() =>
-                        setActiveImage((i) => (i - 1 + car.gallery.length) % car.gallery.length)
+                        setActiveImage(
+                          (i) =>
+                            (i - 1 + car.gallery.length) % car.gallery.length,
+                        )
                       }
                       aria-label="Previous image"
                       className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-dark/40 hover:bg-dark/70 backdrop-blur-sm text-white flex items-center justify-center transition-colors"
@@ -212,7 +228,9 @@ export default function CarDetails() {
                       <MdChevronLeft size={24} />
                     </button>
                     <button
-                      onClick={() => setActiveImage((i) => (i + 1) % car.gallery.length)}
+                      onClick={() =>
+                        setActiveImage((i) => (i + 1) % car.gallery.length)
+                      }
                       aria-label="Next image"
                       className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-dark/40 hover:bg-dark/70 backdrop-blur-sm text-white flex items-center justify-center transition-colors"
                     >
@@ -231,7 +249,9 @@ export default function CarDetails() {
                       key={src + i}
                       onClick={() => setActiveImage(i)}
                       className={`aspect-[4/3] rounded overflow-hidden border-2 transition-colors ${
-                        activeImage === i ? 'border-primary' : 'border-transparent hover:border-brand-border'
+                        activeImage === i
+                          ? "border-primary"
+                          : "border-transparent hover:border-brand-border"
                       }`}
                     >
                       <img
@@ -265,7 +285,7 @@ export default function CarDetails() {
               </a>
               <a
                 href={`mailto:${company.contact.email}?subject=${encodeURIComponent(
-                  `Enquiry: ${car.year} ${car.make} ${car.model}`
+                  `Enquiry: ${car.year} ${car.make} ${car.model}`,
                 )}`}
                 className="flex items-center gap-2 px-5 py-3 border border-brand-border rounded hover:border-primary hover:text-primary transition-colors text-sm font-semibold"
               >
@@ -281,7 +301,9 @@ export default function CarDetails() {
                     key={label}
                     onClick={() => setActiveTab(label)}
                     className={`flex items-center gap-1.5 pb-4 whitespace-nowrap text-sm sm:text-base font-semibold transition-colors ${
-                      activeTab === label ? 'text-primary border-b-2 border-primary' : 'text-muted hover:text-dark'
+                      activeTab === label
+                        ? "text-primary border-b-2 border-primary"
+                        : "text-muted hover:text-dark"
                     }`}
                   >
                     <Icon size={18} />
@@ -291,40 +313,58 @@ export default function CarDetails() {
               </div>
 
               <div className="pt-6">
-                {activeTab === 'Overview' && (
+                {activeTab === "Overview" && (
                   <div className="space-y-5">
-                    <p className="text-dark leading-relaxed">{car.description}</p>
+                    <p className="text-dark leading-relaxed">
+                      {car.description}
+                    </p>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4">
                       {car.features.slice(0, 6).map((f) => (
-                        <li key={f} className="flex items-center gap-2 text-sm text-muted">
-                          <MdCheckCircle className="text-primary flex-shrink-0" /> {f}
+                        <li
+                          key={f}
+                          className="flex items-center gap-2 text-sm text-muted"
+                        >
+                          <MdCheckCircle className="text-primary flex-shrink-0" />{" "}
+                          {f}
                         </li>
                       ))}
                     </ul>
                   </div>
                 )}
 
-                {activeTab === 'Features & Options' && (
+                {activeTab === "Features & Options" && (
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4">
                     {car.features.map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-sm text-muted">
-                        <MdCheckCircle className="text-primary flex-shrink-0" /> {f}
+                      <li
+                        key={f}
+                        className="flex items-center gap-2 text-sm text-muted"
+                      >
+                        <MdCheckCircle className="text-primary flex-shrink-0" />{" "}
+                        {f}
                       </li>
                     ))}
                   </ul>
                 )}
 
-                {activeTab === 'Location' && (
+                {activeTab === "Location" && (
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <MdLocationOn className="text-primary text-xl flex-shrink-0 mt-0.5" />
                       <div>
-                        <p className="text-dark font-medium">{company.location.street}</p>
-                        <p className="text-muted text-sm">{company.location.landmark}</p>
-                        <p className="text-muted text-sm">{company.location.area}</p>
+                        <p className="text-dark font-medium">
+                          {company.location.street}
+                        </p>
+                        <p className="text-muted text-sm">
+                          {company.location.landmark}
+                        </p>
+                        <p className="text-muted text-sm">
+                          {company.location.area}
+                        </p>
                       </div>
                     </div>
-                    <p className="text-muted text-sm">{company.location.directions}</p>
+                    <p className="text-muted text-sm">
+                      {company.location.directions}
+                    </p>
                     <a
                       href={company.location.googleMapsUrl}
                       target="_blank"
@@ -343,14 +383,15 @@ export default function CarDetails() {
           <aside className="w-full md:w-5/12 lg:w-4/12 space-y-6 md:sticky md:top-28">
             <div className="hidden md:block">
               <div className="flex items-center gap-2 mb-3">
-                {car.status === 'New' ? (
+                {car.status === "New" ? (
                   <span className="badge-new">{car.status}</span>
                 ) : (
                   <span className="badge-used">{car.status}</span>
                 )}
                 {car.condition && (
                   <span className="bg-dark-nav text-white/80 text-xs font-semibold px-2 py-0.5 rounded-full flex items-center gap-1">
-                    <MdVerified size={11} className="text-accent" /> {car.condition}
+                    <MdVerified size={11} className="text-accent" />{" "}
+                    {car.condition}
                   </span>
                 )}
               </div>
@@ -361,18 +402,32 @@ export default function CarDetails() {
               <p className="price-tag text-4xl">{formatPrice(car.price)}</p>
             </div>
 
-            <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="btn-secondary w-full justify-center py-4">
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary w-full justify-center py-4"
+            >
               Request More Info
             </a>
 
             {/* Spec bento */}
             <div className="bg-white rounded p-6 border border-brand-border">
-              <h3 className="font-bold text-dark border-b border-brand-border pb-3 mb-3">Description</h3>
+              <h3 className="font-bold text-dark border-b border-brand-border pb-3 mb-3">
+                Description
+              </h3>
               <div className="space-y-3">
                 {specs.map(({ label, value }) => (
-                  <div key={label} className="flex justify-between items-center text-sm">
-                    <span className="text-muted uppercase tracking-wide text-xs">{label}</span>
-                    <span className="text-dark font-semibold text-right">{value}</span>
+                  <div
+                    key={label}
+                    className="flex justify-between items-center text-sm"
+                  >
+                    <span className="text-muted uppercase tracking-wide text-xs">
+                      {label}
+                    </span>
+                    <span className="text-dark font-semibold text-right">
+                      {value}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -381,7 +436,9 @@ export default function CarDetails() {
             {/* Highlight card */}
             <div className="bg-red-shine text-white p-6 rounded flex items-center justify-between">
               <div className="text-center">
-                <p className="text-xs uppercase tracking-widest opacity-80 mb-1">Fuel</p>
+                <p className="text-xs uppercase tracking-widest opacity-80 mb-1">
+                  Fuel
+                </p>
                 <p className="font-black text-base leading-tight">{car.fuel}</p>
               </div>
               <div className="flex flex-col items-center">
@@ -393,8 +450,12 @@ export default function CarDetails() {
                 </p>
               </div>
               <div className="text-center">
-                <p className="text-xs uppercase tracking-widest opacity-80 mb-1">Drive</p>
-                <p className="font-black text-base leading-tight">{car.drive.split(' ')[0]}</p>
+                <p className="text-xs uppercase tracking-widest opacity-80 mb-1">
+                  Drive
+                </p>
+                <p className="font-black text-base leading-tight">
+                  {car.drive.split(" ")[0]}
+                </p>
               </div>
             </div>
           </aside>
@@ -403,7 +464,9 @@ export default function CarDetails() {
         {/* ── Related vehicles ────────────────────────────────────────── */}
         <section className="section-gap">
           <div className="mb-8">
-            <span className="text-primary font-bold text-xs uppercase tracking-widest">You Might Also Like</span>
+            <span className="text-primary font-bold text-xs uppercase tracking-widest">
+              You Might Also Like
+            </span>
             <h2 className="section-title mt-1">Related Vehicles</h2>
             <div className="divider-red" />
           </div>
@@ -415,5 +478,5 @@ export default function CarDetails() {
         </section>
       </div>
     </main>
-  )
+  );
 }
