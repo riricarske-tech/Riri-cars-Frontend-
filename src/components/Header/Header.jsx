@@ -32,18 +32,7 @@ const NavAnchor = ({ href, children, ...props }) =>
 
 const navLinks = [
   { label: "Home", href: "/" },
-  {
-    label: "Inventory",
-    href: "/cars",
-    children: [
-      { label: "All Vehicles", href: "/cars" },
-      { label: "Hatchbacks", href: "/cars?bodyType=Hatchback" },
-      { label: "Sedans & Saloons", href: "/cars?bodyType=Sedan" },
-      { label: "SUVs & 4x4s", href: "/cars?bodyType=SUV" },
-      { label: "Station Wagons", href: "/cars?bodyType=Station%20Wagon" },
-      { label: "Hybrid Cars", href: "/cars?fuel=Hybrid" },
-    ],
-  },
+  { label: "Inventory", href: "/cars" },
   { label: "Services", href: "/services" },
   { label: "About Us", href: "/about" },
   { label: "Recently Sold", href: "/#recently-sold" },
