@@ -126,7 +126,17 @@ export default function CarDetails() {
     { label: "Make", value: car.make },
     { label: "Model", value: car.model },
     { label: "Trim", value: car.trim },
-    { label: "Mileage", value: `${car.mileage.toLocaleString()} km` },
+    ...(car.mileage !== null &&
+    car.mileage !== undefined &&
+    car.mileage !== "" &&
+    Number(car.mileage) > 0
+      ? [
+          {
+            label: "Mileage",
+            value: `${Number(car.mileage).toLocaleString()} km`,
+          },
+        ]
+      : []),
     { label: "Transmission", value: car.transmission },
     { label: "Engine", value: car.engine },
     { label: "Drivetrain", value: car.drive },
