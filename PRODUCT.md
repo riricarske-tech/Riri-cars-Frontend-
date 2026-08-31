@@ -6,11 +6,11 @@ product
 
 ## Users
 
-Kenyan car buyers — primarily in Nairobi and surrounding areas — shopping for reliable, affordable Japanese imports on mid-range Android devices. They are practical decision-makers: they want to know what's in stock, what it costs, and whether this dealership can be trusted. Many arrive from Facebook or WhatsApp. They compare several dealers before committing to a visit or inquiry.
+Kenyan car buyers — primarily in Nairobi and surrounding areas — shopping for reliable, affordable imports on mid-range Android devices. They are practical decision-makers: they want to know what's in stock, what it costs, and whether this dealership can be trusted. Many arrive from Facebook or WhatsApp. They compare several dealers before committing to a visit or inquiry.
 
 ## Product Purpose
 
-Riri Cars Ltd.'s website is the digital front desk for a physical showroom on Kiambu Road. Its job is to surface the right car quickly, establish trust, and convert interest into a WhatsApp message, phone call, or showroom visit. Success is measured in inquiries, not page impressions.
+Riri Cars' website is the digital front desk for a physical showroom on Kiambu Road. Its job is to surface the right car quickly, establish trust, and convert interest into a WhatsApp message, phone call, or showroom visit. Success is measured in inquiries, not page impressions.
 
 ## Brand Personality
 

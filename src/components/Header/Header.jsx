@@ -133,18 +133,18 @@ export default function Header() {
           <Link
             to="/"
             className={`flex items-center gap-2 flex-shrink-0 ${styles.mobileBrand}`}
-            aria-label="Riri Cars Ltd — home"
+            aria-label="Riri Cars — home"
           >
-            <img
+              <img
               src={logo}
-              alt="Riri Cars Ltd — used Japanese car dealership in Nairobi, Kenya"
+              alt="Riri Cars — used car dealership in Nairobi, Kenya"
               width="56"
               height="56"
               className={`h-14 w-auto object-contain ${styles.desktopLogo}`}
             />
             <img
               src={mobileLogo}
-              alt="Riri Cars Ltd"
+              alt="Riri Cars"
               width="600"
               height="400"
               className={styles.mobileLogo}

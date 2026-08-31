@@ -8,7 +8,7 @@ const stats = [
   {
     icon: MdDirectionsCar,
     value: '8+',
-    label: 'Japanese Brands',
+    label: 'Popular Brands',
     desc: 'Toyota, Honda, Nissan & more',
   },
   {

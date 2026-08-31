@@ -1,5 +1,5 @@
 /**
- * Riri Cars Ltd. — SEO configuration and schema.org JSON-LD builders.
+ * Riri Cars — SEO configuration and schema.org JSON-LD builders.
  * All canonical URLs, meta defaults, and structured-data objects are
  * generated from the single verified source of truth in data/company.js.
  */

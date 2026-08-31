@@ -17,7 +17,7 @@ const principles = [
   {
     icon: MdVerifiedUser,
     title: 'Quality',
-    description: 'Every vehicle is sourced from trusted Japanese auctions and inspected before it reaches our showroom floor.',
+    description: 'Every vehicle is sourced from trusted auctions and inspected before it reaches our showroom floor.',
   },
   {
     icon: MdVisibility,
@@ -40,14 +40,14 @@ export default function About() {
   return (
     <main className="pt-20 md:pt-24 bg-brand-bg">
       <SEO
-        title="About Riri Cars Ltd — Trusted Used Car Dealership in Nairobi Since 2010"
-        description="Riri Cars Ltd has imported and sold quality used Japanese vehicles in Nairobi since 2010. Based on Kiambu Road at Fourways Junction, with 54K+ Facebook followers and a 90% customer recommendation rate."
+        title="About Riri Cars — Trusted Used Car Dealership in Nairobi Since 2010"
+        description="Riri Cars has imported and sold quality used imported vehicles in Nairobi since 2010. Based on Kiambu Road at Fourways Junction, with 54K+ Facebook followers and a 90% customer recommendation rate."
         path="/about"
         jsonLd={[
           {
             '@context': 'https://schema.org',
             '@type': 'AboutPage',
-            name: 'About Riri Cars Ltd.',
+            name: 'About Riri Cars',
             url: absoluteUrl('/about'),
             mainEntity: { '@id': `${absoluteUrl('/')}#dealer` },
           },
@@ -81,7 +81,7 @@ export default function About() {
               <div className="absolute -inset-3 bg-primary/5 rounded-xl" />
               <img
                 src="https://images.unsplash.com/photo-1669691101370-9ee9ee0782dc?w=1200&q=85&auto=format&fit=crop"
-                alt="Quality used Japanese import vehicle at the Riri Cars showroom, Kiambu Road, Nairobi"
+                alt="Quality used imported vehicle at the Riri Cars showroom, Kiambu Road, Nairobi"
                 className="relative z-10 w-full h-[380px] md:h-[460px] object-cover rounded-lg shadow-card-hover"
                 fetchPriority="high"
                 decoding="async"
@@ -117,12 +117,12 @@ export default function About() {
             <div className="divider-red mb-5" />
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
-                Riri Cars Ltd. was established in {company.established} with a simple mission: make quality Japanese
-                import vehicles accessible and affordable to everyday Kenyans. What started as a dedicated Kiambu
+                Riri Cars was established in {company.established} with a simple mission: make quality imported
+                vehicles accessible and affordable to everyday Kenyans. What started as a dedicated Kiambu
                 Road dealership has grown into one of Nairobi's most recognized names in used car sales.
               </p>
               <p>
-                Every vehicle that reaches our Fourways Junction showroom is sourced directly from Japanese auctions
+                Every vehicle that reaches our Fourways Junction showroom is sourced directly from auctions
                 and carefully inspected before it's offered for sale. We arrange asset financing on every car in
                 stock — through partners like Dream Credit Limited — and back every sale with fair trade-in
                 valuations and genuine after-sales support.

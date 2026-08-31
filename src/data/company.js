@@ -1,16 +1,16 @@
 /**
- * Riri Cars Ltd. — Verified business information
+ * Riri Cars — Verified business information
  * Sources: Facebook (facebook.com/riricars.co.ke), Kenyanlist, nairobi.tel, multiple directories
  * Last verified: June 2026
  */
 
 export const company = {
-  name: "Riri Cars Ltd.",
+  name: "Riri Cars",
   shortName: "RIRI CARS",
   tagline: "Where Excellence Meets Affordability",
   slogan: "Cars You Can Trust",
   description:
-    "Riri Cars Ltd. is a premier importer and dealer of quality used Japanese vehicles in Nairobi, Kenya. We offer a wide selection of meticulously sourced cars — from compact hatchbacks and family sedans to powerful SUVs — backed by flexible asset financing, fair trade-in valuations, and expert after-sales support.",
+    "Riri Cars is a premier importer and dealer of quality used imported vehicles in Nairobi, Kenya. We offer a wide selection of meticulously sourced cars — from compact hatchbacks and family sedans to powerful SUVs — backed by flexible asset financing, fair trade-in valuations, and expert after-sales support.",
   mission:
     "To provide every Kenyan with access to quality, reliable, and affordable vehicles through transparent dealings and outstanding customer service.",
   established: 2010,
@@ -33,7 +33,7 @@ export const company = {
   // ── Verified location ─────────────────────────────────────────────────────
   location: {
     street: "Kiambu Road, Fourways Junction",
-    landmark: "Behind The Fuse Club, opposite Shell Petrol Station",
+    landmark: "Opposite Shell Petrol Station",
     area: "Ridgeways, Nairobi",
     city: "Nairobi",
     country: "Kenya",

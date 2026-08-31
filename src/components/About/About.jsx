@@ -71,18 +71,18 @@ export default function About() {
             className="order-1 lg:order-2"
           >
             <span className="text-primary font-bold text-xs uppercase tracking-widest">
-              About Riri Cars Ltd.
+              About Riri Cars
             </span>
             <h2 className="section-title mt-1 text-3xl lg:text-4xl">
               Nairobi's Trusted
               <br />
-              <span className="text-primary">Japanese Car Dealer</span>
+              <span className="text-primary">Imported Car Dealer</span>
             </h2>
             <div className="divider-red mt-3 mb-5" />
 
             <p className="text-muted leading-relaxed mb-3">
-              Riri Cars Ltd. is a premier importer and dealer of quality used
-              Japanese vehicles, conveniently located along{" "}
+              Riri Cars is a premier importer and dealer of quality used
+              imported vehicles, conveniently located along{" "}
               <strong className="text-dark">
                 Kiambu Road at Fourways Junction
               </strong>
@@ -90,9 +90,9 @@ export default function About() {
               Estate, and Gigiri.
             </p>
             <p className="text-muted leading-relaxed mb-7">
-              We stock a carefully selected range of JDM (Japanese Domestic
-              Market) vehicles including hatchbacks, sedans, station wagons, and
-              SUVs from trusted Japanese makes. Every vehicle comes with full
+              We stock a carefully selected range of JDM (Domestic Market)
+              vehicles including hatchbacks, sedans, station wagons, and
+              SUVs from trusted brands. Every vehicle comes with full
               auction documentation, and we arrange asset financing on every car
               in our showroom.
             </p>

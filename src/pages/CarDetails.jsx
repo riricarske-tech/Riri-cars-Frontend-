@@ -92,8 +92,8 @@ export default function CarDetails() {
     return (
       <main className="container-main pt-28 md:pt-32 pb-24 text-center min-h-[60vh]">
         <SEO
-          title="Vehicle Not Found | Riri Cars Ltd Nairobi"
-          description="This vehicle may have been sold or removed from stock. Browse our current inventory of used Japanese import cars for sale in Nairobi."
+          title="Vehicle Not Found | Riri Cars Nairobi"
+            description="This vehicle may have been sold or removed from stock. Browse our current inventory of used import cars for sale in Nairobi."
           path={`/cars/${id}`}
           noindex
         />
@@ -155,7 +155,7 @@ export default function CarDetails() {
         description={`Buy this ${car.status.toLowerCase()} ${carName} (${car.trim}) at Riri Cars, Kiambu Road, Nairobi. ${car.mileage.toLocaleString()} km, ${car.fuel}, ${car.transmission}, ${car.drive}. ${formatPrice(car.price)} — asset financing and trade-in available.`}
         path={`/cars/${car.id}`}
         image={car.gallery?.[0] || car.image}
-        imageAlt={`${carName} for sale at Riri Cars Ltd in Nairobi`}
+        imageAlt={`${carName} for sale at Riri Cars in Nairobi`}
         type="product"
         jsonLd={[
           vehicleSchema(car),

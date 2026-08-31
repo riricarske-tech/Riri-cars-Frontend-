@@ -29,8 +29,7 @@ export default function CTA() {
               Ready to Drive Your Next Car?
             </h2>
             <p className="text-white/80 text-base max-w-xl mb-2">
-              Visit us at Kiambu Road, Fourways Junction — or contact us right now.
-              Asset financing available on every vehicle.
+              Visit us at Kiambu Road, Fourways Junction — Handpicked quality vehicles from trusted markets globally to bring you the best value for your money.
             </p>
             <p className="text-white/60 text-sm flex items-center gap-2 justify-center md:justify-start">
               <MdLocationOn />

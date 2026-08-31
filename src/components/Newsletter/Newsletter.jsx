@@ -51,7 +51,7 @@ export default function Newsletter() {
               <span className="text-primary">Exclusive Deals First</span>
             </h2>
             <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-md">
-              Subscribe and be the first to know when new Japanese imports land at our showroom
+              Subscribe and be the first to know when new imports land at our showroom
               on Kiambu Road. Weekly deals, buying guides, and tips — straight to your inbox.
             </p>
 

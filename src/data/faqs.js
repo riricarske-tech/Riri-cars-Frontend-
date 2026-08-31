@@ -1,5 +1,5 @@
 /**
- * Riri Cars Ltd. — Frequently asked questions.
+ * Riri Cars — Frequently asked questions.
  * Rendered visibly on the home page and emitted as FAQPage JSON-LD
  * (Google requires the structured data to mirror visible content).
  * Answers are written in plain, complete sentences so AI search engines
@@ -10,12 +10,12 @@ export const faqs = [
   {
     question: 'Where is Riri Cars located in Nairobi?',
     answer:
-      'Riri Cars Ltd. is located on Kiambu Road at Fourways Junction in Ridgeways, Nairobi — behind The Fuse Club, opposite the Shell Petrol Station. The showroom is easily accessible from Ridgeways Roundabout, Runda, Ruaka, Garden Estate, and Gigiri.',
+      'Riri Cars is located on Kiambu Road at Fourways Junction in Ridgeways, Nairobi — opposite the Shell Petrol Station. The showroom is easily accessible from Ridgeways Roundabout, Runda, Ruaka, Garden Estate, and Gigiri.',
   },
   {
     question: 'What types of cars does Riri Cars sell?',
     answer:
-      'Riri Cars sells quality used Japanese import vehicles, including hatchbacks, sedans, station wagons, and SUVs from makes such as Toyota, Mazda, Subaru, Honda, Nissan, Mitsubishi, Isuzu, and Suzuki. Every vehicle is sourced from Japanese auctions with full auction sheet documentation and inspected before sale.',
+      'Riri Cars sells quality used import vehicles, including hatchbacks, sedans, station wagons, and SUVs from makes such as Toyota, Mazda, Subaru, Honda, Nissan, Mitsubishi, Isuzu, and Suzuki. Every vehicle is sourced from auctions with full auction sheet documentation and inspected before sale.',
   },
   {
     question: 'Does Riri Cars offer car financing in Kenya?',

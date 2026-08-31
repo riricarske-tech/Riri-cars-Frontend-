@@ -157,8 +157,8 @@ export default function Inventory() {
   return (
     <main className="pt-20 md:pt-24 bg-brand-bg">
       <SEO
-        title="Used Cars for Sale in Nairobi, Kenya — Browse Inventory | Riri Cars Ltd"
-        description="Browse quality used Japanese import cars for sale in Nairobi at Riri Cars, Kiambu Road. Toyota, Mazda, Subaru, Honda, Nissan hatchbacks, sedans & SUVs with asset financing and trade-in options."
+        title="Used Cars for Sale in Nairobi, Kenya — Browse Inventory | Riri Cars"
+        description="Browse quality used import cars for sale in Nairobi at Riri Cars, Kiambu Road. Toyota, Mazda, Subaru, Honda, Nissan hatchbacks, sedans & SUVs with asset financing and trade-in options."
         path="/cars"
         jsonLd={[
           breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Inventory' }]),

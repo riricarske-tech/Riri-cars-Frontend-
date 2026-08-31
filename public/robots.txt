@@ -1,4 +1,4 @@
-# Riri Cars Ltd — https://riricars.co.ke
+# Riri Cars — https://riricars.co.ke
 # All crawlers welcome, including AI search and answer engines.
 
 User-agent: *

@@ -61,14 +61,14 @@ export default function Contact() {
   return (
     <main className="pt-24 md:pt-28 bg-brand-bg">
       <SEO
-        title="Contact Riri Cars Ltd — Car Dealership on Kiambu Road, Nairobi | +254 729 003 333"
-        description="Visit Riri Cars at Kiambu Road, Fourways Junction, Nairobi (behind The Fuse Club). Call or WhatsApp +254 729 003 333, email info@riricars.co.ke. Open Mon–Fri 7 AM–10 PM, Sat 8 AM–5 PM."
+        title="Contact Riri Cars — Car Dealership on Kiambu Road, Nairobi | +254 729 003 333"
+        description="Visit Riri Cars at Kiambu Road, Fourways Junction, Nairobi. Call or WhatsApp +254 729 003 333, email info@riricars.co.ke. Open Mon–Fri 7 AM–10 PM, Sat 8 AM–5 PM."
         path="/contact"
         jsonLd={[
           {
             '@context': 'https://schema.org',
             '@type': 'ContactPage',
-            name: 'Contact Riri Cars Ltd.',
+            name: 'Contact Riri Cars',
             url: absoluteUrl('/contact'),
             mainEntity: { '@id': `${absoluteUrl('/')}#dealer` },
           },
@@ -265,7 +265,7 @@ export default function Contact() {
       {/* Map */}
       <section className="w-full h-[420px] md:h-[500px] relative">
         <iframe
-          title="Riri Cars Ltd. location"
+          title="Riri Cars location"
           src={mapSrc}
           className="w-full h-full border-0 grayscale-[0.3] hover:grayscale-0 transition-all duration-700"
           loading="lazy"

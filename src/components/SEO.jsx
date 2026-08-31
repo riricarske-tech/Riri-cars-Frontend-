@@ -43,7 +43,7 @@ export default function SEO({
   description,
   path = "/",
   image,
-  imageAlt = "Riri Cars Ltd showroom and vehicles in Nairobi",
+  imageAlt = "Riri Cars showroom and vehicles in Nairobi",
   type = "website",
   noindex = false,
   jsonLd = [],

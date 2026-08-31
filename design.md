@@ -2,11 +2,11 @@
 
 ## Brand Overview
 
-**Business:** Riri Cars Ltd. — Premier importer and dealer of quality used Japanese vehicles in Nairobi, Kenya.
+**Business:** Riri Cars — Premier importer and dealer of quality used imported vehicles in Nairobi, Kenya.
 **Tagline:** "Where Excellence Meets Affordability"
 **Slogan:** "Cars You Can Trust"
 **Established:** 2010
-**Audience:** Kenyan car buyers looking for reliable, affordable Japanese imports.
+**Audience:** Kenyan car buyers looking for reliable, affordable imports.
 
 ---
 
@@ -151,12 +151,12 @@ star-empty       → text-brand-border
 ## Business Info (for copy)
 
 ```
-Name:        Riri Cars Ltd.
+Name:        Riri Cars
 Phone:       +254 729 003 333
 WhatsApp:    +254 729 003 333
 Email:       info@riricars.co.ke
 Website:     https://riricars.co.ke
-Address:     Kiambu Road, Fourways Junction, Behind The Fuse Club,
+Address:     Kiambu Road, Fourways Junction
              opposite Shell Petrol Station, Ridgeways, Nairobi
 Hours:       Mon–Fri: 7 AM–10 PM | Sat: 8 AM–5 PM | Sun: Closed
 Facebook:    https://www.facebook.com/riricars.co.ke/

@@ -1,10 +1,10 @@
 /**
  * Testimonials
  *
- * NOTE: Riri Cars Ltd. has a verified 90% recommendation rate based on 31 Facebook reviews.
+ * NOTE: Riri Cars has a verified 90% recommendation rate based on 31 Facebook reviews.
  * Specific review text was not publicly accessible at the time of research.
  * The testimonials below are SAMPLE testimonials representative of typical Kenyan car-buyer
- * experiences at a Japanese import dealership. They are NOT direct quotes from real reviews.
+ * experiences at an import dealership. They are NOT direct quotes from real reviews.
  * They should be replaced with verified real reviews when available.
  */
 
@@ -33,7 +33,7 @@ export const testimonials = [
     role: 'Teacher, Garden Estate',
     rating: 5,
     text:
-      'I was looking for a Toyota Fielder and Riri Cars had the best price on Kiambu Road. They even showed me the Japanese auction sheet to confirm the car\'s history. That level of transparency is rare. Will buy from them again!',
+      'I was looking for a Toyota Fielder and Riri Cars had the best price on Kiambu Road. They even showed me the auction sheet to confirm the car\'s history. That level of transparency is rare. Will buy from them again!',
     verified: false,
   },
 ]

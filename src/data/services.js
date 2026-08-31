@@ -1,5 +1,5 @@
 /**
- * Riri Cars Ltd. — Services
+ * Riri Cars — Services
  * Sourced from: Facebook posts, Kenyanlist listing, japanesecarstrade profile
  * VERIFIED: Direct purchase, Trade-in, Asset financing, Direct import (all confirmed via Facebook)
  * VERIFIED: Asset financing partner "Dream Credit Limited" — confirmed via Dream Credit's own
@@ -14,9 +14,9 @@ export const services = [
     icon: 'MdDirectionsCar',
     title: 'Quality Used Imports',
     description:
-      'We source and import meticulously selected Japanese domestic market (JDM) vehicles. Every unit is quality-inspected before listing — hatchbacks, sedans, SUVs, and wagons.',
+      'We source and import meticulously selected domestic market (JDM) vehicles. Every unit is quality-inspected before listing — hatchbacks, sedans, SUVs, and wagons.',
     steps: [
-      'Hand-picked from Japan auctions with full auction sheet history',
+      'Hand-picked from auctions with full auction sheet history',
       'Quality-inspected on arrival before it reaches our showroom',
       'Choose from hatchbacks, sedans, SUVs, and wagons in stock',
     ],
@@ -58,7 +58,7 @@ export const services = [
       "Can't find what you're looking for in our stock? We will source and directly import any vehicle from Japan to your exact specifications at market-competitive prices.",
     steps: [
       'Tell us the exact make, model, year, and spec you want',
-      'We source it directly from Japanese auctions on your behalf',
+      'We source it directly from auctions on your behalf',
       'Vehicle is shipped, cleared, and delivered to our Kiambu Road showroom',
     ],
   },

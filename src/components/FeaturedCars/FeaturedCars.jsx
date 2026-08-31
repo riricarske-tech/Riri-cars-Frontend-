@@ -59,8 +59,7 @@ export default function FeaturedCars() {
             <h2 className="section-title mt-1">Available Vehicles</h2>
             <div className="divider-red" />
             <p className="section-subtitle mt-3">
-              Handpicked Japanese domestic market imports at market-leading prices.
-              Asset financing available on every vehicle.
+              Handpicked quality vehicles from trusted markets globally to bring you the best value for your money.
             </p>
           </div>
           <Link
@@ -154,7 +153,7 @@ export default function FeaturedCars() {
               className="text-center py-16 text-muted"
             >
               <p className="text-lg font-semibold mb-2">No vehicles in this category right now.</p>
-              <p className="text-sm">Contact us — we can source any vehicle directly from Japan.</p>
+              <p className="text-sm">Contact us — we can source any vehicle directly from overseas.</p>
               <Link to="/contact" className="btn-primary mt-4 inline-flex">
                 Contact Us <MdArrowForward />
               </Link>

@@ -1,5 +1,5 @@
 /**
- * Riri Cars Ltd. — Search filter option catalogs.
+ * Riri Cars — Search filter option catalogs.
  * Live inventory now comes from the backend API (see src/lib/api.js);
  * these curated lists back the top-level SearchBar dropdowns.
  */

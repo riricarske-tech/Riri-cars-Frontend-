@@ -63,7 +63,7 @@ export default function Footer() {
             </div>
 
             <p className="text-white/50 text-sm leading-relaxed mb-3">
-              Riri Cars Ltd. is a trusted importer and dealer of quality Japanese vehicles,
+              Riri Cars is a trusted importer and dealer of quality imported vehicles,
               located along Kiambu Road in Nairobi.
             </p>
             <p className="text-white/30 text-xs italic mb-5">

@@ -19,7 +19,7 @@ import { breadcrumbSchema, absoluteUrl, dealerRef } from '../lib/seo'
 const servicesListSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'Riri Cars Ltd — Automotive Services in Nairobi',
+  name: 'Riri Cars — Automotive Services in Nairobi',
   itemListElement: services.map((s, i) => ({
     '@type': 'ListItem',
     position: i + 1,
@@ -47,8 +47,8 @@ export default function Services() {
   return (
     <main className="pt-20 md:pt-24 bg-brand-bg">
       <SEO
-        title="Car Financing, Trade-In & Japan Import Services in Nairobi | Riri Cars Ltd"
-        description="Riri Cars offers asset financing through Dream Credit Limited, same-day trade-in valuations, direct car imports from Japan, insurance assistance, and after-sales support — all from our Kiambu Road showroom in Nairobi, Kenya."
+        title="Car Financing, Trade-In & Japan Import Services in Nairobi | Riri Cars"
+          description="Riri Cars offers asset financing through Dream Credit Limited, same-day trade-in valuations, direct car imports from Japan, insurance assistance, and after-sales support — all from our Kiambu Road showroom in Nairobi, Kenya."
         path="/services"
         jsonLd={[
           servicesListSchema,
@@ -86,7 +86,7 @@ export default function Services() {
         <h2 className="section-title mt-1 mx-auto">Your Complete Automotive Partner</h2>
         <div className="divider-red mx-auto" />
         <p className="text-muted max-w-2xl mx-auto mt-3">
-          From sourcing and importing quality Japanese vehicles to financing, trade-ins, insurance, and after-sales
+          From sourcing and importing quality imported vehicles to financing, trade-ins, insurance, and after-sales
           care — Riri Cars handles every step of the journey from Kiambu Road, Nairobi.
         </p>
       </section>
