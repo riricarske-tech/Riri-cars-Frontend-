@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'motion/react'
-import { FaFacebookF, FaWhatsapp } from 'react-icons/fa'
+import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { SiTiktok } from 'react-icons/si'
 import { company } from '../../data/company'
 
@@ -19,6 +19,13 @@ const socials = [
     Icon: FaFacebookF,
     hoverBg: 'hover:bg-[#1877F2] hover:border-[#1877F2]',
     tooltip: 'Facebook',
+  },
+    {
+    label: 'Instagram',
+    href: company.social.instagram,
+    Icon: FaInstagram,
+    hoverBg: 'hover:bg-[#E1306C] hover:border-[#E1306C]',
+    tooltip: 'Instagram',
   },
   {
     label: 'WhatsApp',
