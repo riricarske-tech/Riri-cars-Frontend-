@@ -157,8 +157,8 @@ WhatsApp:    +254 729 003 333
 Email:       info@riricars.co.ke
 Website:     https://riricars.co.ke
 Address:     Kiambu Road, Fourways Junction
-             opposite Shell Petrol Station, Ridgeways, Nairobi
-Hours:       Mon–Fri: 7 AM–10 PM | Sat: 8 AM–5 PM | Sun: Closed
+             Ridgeways, Nairobi
+Hours:       Mon–Sat: 8 AM–6 PM | Sun: 10 AM–4 PM
 Facebook:    https://www.facebook.com/riricars.co.ke/
 Instagram:   https://www.instagram.com/riricars/
 TikTok:      https://www.tiktok.com/@riricarsltd1

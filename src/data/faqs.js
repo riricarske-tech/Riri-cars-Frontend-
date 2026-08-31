@@ -10,7 +10,7 @@ export const faqs = [
   {
     question: 'Where is Riri Cars located in Nairobi?',
     answer:
-      'Riri Cars is located on Kiambu Road at Fourways Junction in Ridgeways, Nairobi — opposite the Shell Petrol Station. The showroom is easily accessible from Ridgeways Roundabout, Runda, Ruaka, Garden Estate, and Gigiri.',
+      'Riri Cars is located on Kiambu Road at Fourways Junction in Ridgeways, Nairobi. The showroom is easily accessible from Ridgeways Roundabout, Runda, Ruaka, Garden Estate, and Gigiri.',
   },
   {
     question: 'What types of cars does Riri Cars sell?',
@@ -35,7 +35,7 @@ export const faqs = [
   {
     question: 'What are Riri Cars opening hours?',
     answer:
-      'Riri Cars is open Monday to Friday from 7:00 AM to 10:00 PM, Saturday from 8:00 AM to 5:00 PM, and closed on Sunday. You can reach the team any time on +254 729 003 333 (call or WhatsApp).',
+      'Riri Cars is open Monday to Saturday from 8:00 AM to 6:00 PM, and Sunday from 10:00 AM to 4:00 PM. You can reach the team any time on +254 729 003 333 (call or WhatsApp).',
   },
 ]
 

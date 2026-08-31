@@ -33,7 +33,7 @@ export const company = {
   // ── Verified location ─────────────────────────────────────────────────────
   location: {
     street: "Kiambu Road, Fourways Junction",
-    landmark: "Opposite Shell Petrol Station",
+    landmark: "",
     area: "Ridgeways, Nairobi",
     city: "Nairobi",
     country: "Kenya",
@@ -46,17 +46,17 @@ export const company = {
       "Easily accessible from Ridgeways Roundabout, Runda, Ruaka, Garden Estate, and Gigiri.",
   },
 
-  // ── Verified opening hours (Mon–Fri source: Kenyanlist / nairobi.tel) ─────
+  // ── Verified opening hours (updated per user request) ────────────────
   hours: [
-    { day: "Monday", open: "7:00 AM", close: "10:00 PM", closed: false },
-    { day: "Tuesday", open: "7:00 AM", close: "10:00 PM", closed: false },
-    { day: "Wednesday", open: "7:00 AM", close: "10:00 PM", closed: false },
-    { day: "Thursday", open: "7:00 AM", close: "10:00 PM", closed: false },
-    { day: "Friday", open: "7:00 AM", close: "10:00 PM", closed: false },
-    { day: "Saturday", open: "8:00 AM", close: "5:00 PM", closed: false },
-    { day: "Sunday", open: null, close: null, closed: true },
+    { day: "Monday", open: "8:00 AM", close: "6:00 PM", closed: false },
+    { day: "Tuesday", open: "8:00 AM", close: "6:00 PM", closed: false },
+    { day: "Wednesday", open: "8:00 AM", close: "6:00 PM", closed: false },
+    { day: "Thursday", open: "8:00 AM", close: "6:00 PM", closed: false },
+    { day: "Friday", open: "8:00 AM", close: "6:00 PM", closed: false },
+    { day: "Saturday", open: "8:00 AM", close: "6:00 PM", closed: false },
+    { day: "Sunday", open: "10:00 AM", close: "4:00 PM", closed: false },
   ],
-  hoursShort: "Mon–Fri: 7 AM–10 PM · Sat: 8 AM–5 PM · Sun: Closed",
+  hoursShort: "Mon–Sat: 8 AM–6 PM · Sun: 10 AM–4 PM",
 
   // ── Verified social media ─────────────────────────────────────────────────
   social: {

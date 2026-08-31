@@ -45,8 +45,9 @@ export default function Services() {
           <h2 className="section-title mt-1 mx-auto">Our Services</h2>
           <div className="divider-red mx-auto" />
           <p className="section-subtitle mx-auto text-center mt-3 max-w-2xl">
-            From direct imports and asset financing to trade-ins and after-sales
-            support — Riri Cars is your complete automotive partner on Kiambu Road.
+     From direct imports and asset financing to trade-ins and after-sales
+  support, Riri Cars is your complete automotive partner in Kenya,
+  conveniently located on Kiambu Road.
           </p>
         </motion.div>
 

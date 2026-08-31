@@ -62,7 +62,7 @@ export default function Contact() {
     <main className="pt-24 md:pt-28 bg-brand-bg">
       <SEO
         title="Contact Riri Cars — Car Dealership on Kiambu Road, Nairobi | +254 729 003 333"
-        description="Visit Riri Cars at Kiambu Road, Fourways Junction, Nairobi. Call or WhatsApp +254 729 003 333, email info@riricars.co.ke. Open Mon–Fri 7 AM–10 PM, Sat 8 AM–5 PM."
+        description="Visit Riri Cars at Kiambu Road, Fourways Junction, Nairobi. Call or WhatsApp +254 729 003 333, email info@riricars.co.ke. Open Mon–Sat 8 AM–6 PM, Sun 10 AM–4 PM."
         path="/contact"
         jsonLd={[
           {

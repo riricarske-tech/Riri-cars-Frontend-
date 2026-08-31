@@ -81,8 +81,8 @@ export default function About() {
             <div className="divider-red mt-3 mb-5" />
 
             <p className="text-muted leading-relaxed mb-3">
-              Riri Cars is a premier importer and dealer of quality used
-              imported vehicles, conveniently located along{" "}
+              Riri Cars is a premier importer and dealer of quality new and used
+              vehicles, conveniently located along{" "}
               <strong className="text-dark">
                 Kiambu Road at Fourways Junction
               </strong>
@@ -90,11 +90,8 @@ export default function About() {
               Estate, and Gigiri.
             </p>
             <p className="text-muted leading-relaxed mb-7">
-              We stock a carefully selected range of JDM (Domestic Market)
-              vehicles including hatchbacks, sedans, station wagons, and
-              SUVs from trusted brands. Every vehicle comes with full
-              auction documentation, and we arrange asset financing on every car
-              in our showroom.
+              We offer a carefully selected range of vehicles across different makes, models, and markets, including hatchbacks, sedans, station wagons, SUVs, 4x4s, and premium vehicles. We source quality vehicles locally and internationally to give our customers more choice, competitive prices, and reliable vehicles.
+              Every imported vehicle comes with the necessary auction and import documentation, where applicable, and we arrange asset financing on every vehicle in our showroom.
             </p>
 
             {/* Why Choose Us List */}
