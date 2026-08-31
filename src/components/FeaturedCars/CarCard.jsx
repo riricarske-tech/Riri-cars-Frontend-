@@ -30,9 +30,9 @@ export default function CarCard({ car }) {
         to={`/cars/${car.id}`}
         className="relative overflow-hidden aspect-[4/3] bg-brand-low flex-shrink-0 block"
       >
-        <img
+          <img
           src={car.image}
-          alt={`${car.year} ${car.make} ${car.model} ${car.trim || ""} in ${car.exteriorColor} — used ${car.bodyType} for sale in Nairobi`.trim()}
+          alt={`${car.year} ${car.make} ${car.model} ${car.trim || ""} in ${car.exteriorColor} — ${car.bodyType} for sale in Nairobi`.trim()}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
           decoding="async"

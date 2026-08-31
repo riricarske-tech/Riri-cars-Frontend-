@@ -15,7 +15,7 @@ export const faqs = [
   {
     question: 'What types of cars does Riri Cars sell?',
     answer:
-      'Riri Cars sells quality used import vehicles, including hatchbacks, sedans, station wagons, and SUVs from makes such as Toyota, Mazda, Subaru, Honda, Nissan, Mitsubishi, Isuzu, and Suzuki. Every vehicle is sourced from auctions with full auction sheet documentation and inspected before sale.',
+      'Riri Cars sells quality new and used vehicles, including hatchbacks, sedans, station wagons, and SUVs from makes such as Toyota, Mazda, Subaru, Honda, Nissan, Mitsubishi, Isuzu, and Suzuki. Every vehicle is sourced from auctions or trusted partners with full documentation and inspected before sale.',
   },
   {
     question: 'Does Riri Cars offer car financing in Kenya?',

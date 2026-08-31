@@ -34,7 +34,7 @@ const quickLinks = [
 ]
 
 const serviceLinks = [
-  'Quality Used Imports',
+  'Quality New & Used Vehicles',
   'Asset Financing',
   'Trade-In / Exchange',
   'Direct Import Service',
@@ -63,7 +63,7 @@ export default function Footer() {
             </div>
 
             <p className="text-white/50 text-sm leading-relaxed mb-3">
-              Riri Cars is a trusted importer and dealer of quality imported vehicles,
+              Riri Cars is a trusted importer and dealer of quality new and used motor vehicles,
               located along Kiambu Road in Nairobi.
             </p>
             <p className="text-white/30 text-xs italic mb-5">

@@ -40,8 +40,8 @@ export default function About() {
   return (
     <main className="pt-20 md:pt-24 bg-brand-bg">
       <SEO
-        title="About Riri Cars — Trusted Used Car Dealership in Nairobi Since 2010"
-        description="Riri Cars has imported and sold quality used imported vehicles in Nairobi since 2010. Based on Kiambu Road at Fourways Junction, with 54K+ Facebook followers and a 90% customer recommendation rate."
+        title="About Riri Cars — Trusted New and Used Car Dealership in Nairobi Since 2010"
+        description="Riri Cars has imported and sold quality new and used vehicles in Nairobi since 2010. Based on Kiambu Road at Fourways Junction, with 54K+ Facebook followers and a 90% customer recommendation rate."
         path="/about"
         jsonLd={[
           {
@@ -81,7 +81,7 @@ export default function About() {
               <div className="absolute -inset-3 bg-primary/5 rounded-xl" />
               <img
                 src="https://images.unsplash.com/photo-1669691101370-9ee9ee0782dc?w=1200&q=85&auto=format&fit=crop"
-                alt="Quality used imported vehicle at the Riri Cars showroom, Kiambu Road, Nairobi"
+                alt="Quality new and used vehicle at the Riri Cars showroom, Kiambu Road, Nairobi"
                 className="relative z-10 w-full h-[380px] md:h-[460px] object-cover rounded-lg shadow-card-hover"
                 fetchPriority="high"
                 decoding="async"
@@ -119,7 +119,7 @@ export default function About() {
               <p>
                 Riri Cars was established in {company.established} with a simple mission: make quality imported
                 vehicles accessible and affordable to everyday Kenyans. What started as a dedicated Kiambu
-                Road dealership has grown into one of Nairobi's most recognized names in used car sales.
+                Road dealership has grown into one of Nairobi's most recognized names in new and used car sales.
               </p>
               <p>
                 Every vehicle that reaches our Fourways Junction showroom is sourced directly from auctions

@@ -12,9 +12,9 @@ export const services = [
   {
     id: 1,
     icon: 'MdDirectionsCar',
-    title: 'Quality Used Imports',
+    title: 'Quality New & Used Vehicles',
     description:
-      'We source and import meticulously selected domestic market (JDM) vehicles. Every unit is quality-inspected before listing — hatchbacks, sedans, SUVs, and wagons.',
+      'We source and import meticulously selected vehicles from trusted markets. Every unit is quality-inspected before listing — hatchbacks, sedans, SUVs, and wagons.',
     steps: [
       'Hand-picked from auctions with full auction sheet history',
       'Quality-inspected on arrival before it reaches our showroom',
@@ -55,7 +55,7 @@ export const services = [
     title: 'Direct Import Service',
     // VERIFIED: Confirmed via Facebook — "direct import services" explicitly listed
     description:
-      "Can't find what you're looking for in our stock? We will source and directly import any vehicle from Japan to your exact specifications at market-competitive prices.",
+      "Can't find what you're looking for in our stock? We will source and directly import any vehicle from trusted overseas markets to your exact specifications at market-competitive prices.",
     steps: [
       'Tell us the exact make, model, year, and spec you want',
       'We source it directly from auctions on your behalf',
@@ -89,10 +89,10 @@ export const services = [
 ]
 
 export const whyChooseUs = [
-  { id: 1, text: 'Verified Japan import vehicles with full auction sheets' },
+  { id: 1, text: 'Verified imported vehicles with full auction sheets' },
   { id: 2, text: '90% customer recommendation rate on Facebook (31 reviews)' },
   { id: 3, text: 'Asset financing arranged on ALL vehicles in stock' },
   { id: 4, text: 'Fair and transparent trade-in valuations' },
-  { id: 5, text: 'Direct import: we source any car from Japan for you' },
+  { id: 5, text: 'Direct import: we source any car from overseas for you' },
   { id: 6, text: "54,000+ Kenyans follow us — Kenya's most trusted car dealer" },
 ]

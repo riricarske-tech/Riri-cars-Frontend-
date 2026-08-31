@@ -93,7 +93,7 @@ export default function CarDetails() {
       <main className="container-main pt-28 md:pt-32 pb-24 text-center min-h-[60vh]">
         <SEO
           title="Vehicle Not Found | Riri Cars Nairobi"
-            description="This vehicle may have been sold or removed from stock. Browse our current inventory of used import cars for sale in Nairobi."
+            description="This vehicle may have been sold or removed from stock. Browse our current inventory of new and used cars for sale in Nairobi."
           path={`/cars/${id}`}
           noindex
         />

@@ -14,7 +14,7 @@ export default function FAQ() {
           </h2>
           <div className="divider-red mx-auto" />
           <p className="text-muted mt-3">
-            Everything you need to know about buying a used import car in Nairobi.
+            Everything you need to know about buying new or used cars in Nairobi.
           </p>
         </div>
 

@@ -10,7 +10,7 @@ export const company = {
   tagline: "Where Excellence Meets Affordability",
   slogan: "Cars You Can Trust",
   description:
-    "Riri Cars is a premier importer and dealer of quality used imported vehicles in Nairobi, Kenya. We offer a wide selection of meticulously sourced cars — from compact hatchbacks and family sedans to powerful SUVs — backed by flexible asset financing, fair trade-in valuations, and expert after-sales support.",
+    "Riri Cars is a premier importer and dealer of quality new and used vehicles in Nairobi, Kenya. We offer a wide selection of meticulously sourced cars — from compact hatchbacks and family sedans to powerful SUVs — backed by flexible asset financing, fair trade-in valuations, and expert after-sales support.",
   mission:
     "To provide every Kenyan with access to quality, reliable, and affordable vehicles through transparent dealings and outstanding customer service.",
   established: 2010,

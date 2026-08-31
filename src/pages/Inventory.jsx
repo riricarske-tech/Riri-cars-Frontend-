@@ -157,8 +157,8 @@ export default function Inventory() {
   return (
     <main className="pt-20 md:pt-24 bg-brand-bg">
       <SEO
-        title="Used Cars for Sale in Nairobi, Kenya — Browse Inventory | Riri Cars"
-        description="Browse quality used import cars for sale in Nairobi at Riri Cars, Kiambu Road. Toyota, Mazda, Subaru, Honda, Nissan hatchbacks, sedans & SUVs with asset financing and trade-in options."
+        title="New and Used Cars for Sale in Nairobi, Kenya — Browse Inventory | Riri Cars"
+        description="Browse quality new and used cars for sale in Nairobi at Riri Cars, Kiambu Road. Toyota, Mazda, Subaru, Honda, Nissan hatchbacks, sedans & SUVs with asset financing and trade-in options."
         path="/cars"
         jsonLd={[
           breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Inventory' }]),
@@ -409,7 +409,7 @@ export default function Inventory() {
           ) : (
             <div className="text-center py-16 text-muted bg-white rounded border border-brand-border">
               <p className="text-lg font-semibold mb-2">No vehicles match your filters.</p>
-              <p className="text-sm mb-4">Contact us — we can source any vehicle directly from Japan.</p>
+              <p className="text-sm mb-4">Contact us — we can source any vehicle from trusted overseas markets.</p>
               <button onClick={resetFilters} className="btn-primary mx-auto">
                 Reset Filters
               </button>

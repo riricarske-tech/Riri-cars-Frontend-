@@ -137,7 +137,7 @@ export default function Header() {
           >
               <img
               src={logo}
-              alt="Riri Cars — used car dealership in Nairobi, Kenya"
+              alt="Riri Cars — new and used car dealership in Nairobi, Kenya"
               width="56"
               height="56"
               className={`h-14 w-auto object-contain ${styles.desktopLogo}`}

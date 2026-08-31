@@ -16,13 +16,13 @@ export default function Home() {
   return (
     <main>
       <SEO
-        title="Riri Cars — Quality Used Import Cars for Sale in Nairobi, Kenya"
-        description="Riri Cars is a trusted car dealership on Kiambu Road, Nairobi, selling quality used import vehicles — Toyota, Mazda, Subaru, Honda, Nissan & more. Asset financing, trade-ins, and direct imports. Est. 2010."
+        title="Riri Cars — Quality New & Used Cars for Sale in Nairobi, Kenya"
+        description="Riri Cars is a trusted car dealership on Kiambu Road, Nairobi, selling quality new and used vehicles — Toyota, Mazda, Subaru, Honda, Nissan & more. Asset financing, trade-ins, and direct imports. Est. 2010."
         path="/"
         jsonLd={[faqSchema(faqs), breadcrumbSchema([{ name: 'Home', path: '/' }])]}
       />
       <h1 className="sr-only">
-        Riri Cars — Used Import Cars for Sale in Nairobi, Kenya: Toyota, Mazda,
+        Riri Cars — New & Used Cars for Sale in Nairobi, Kenya: Toyota, Mazda,
         Subaru, Honda & Nissan with Asset Financing
       </h1>
       <FeaturedCars />

@@ -144,7 +144,7 @@ export const vehicleSchema = (car) => ({
 export const vehicleListSchema = (vehicles) => ({
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'Used Cars for Sale in Nairobi, Kenya — Riri Cars Inventory',
+  name: 'New and Used Cars for Sale in Nairobi, Kenya — Riri Cars Inventory',
   numberOfItems: vehicles.length,
   itemListElement: vehicles.map((car, i) => ({
     '@type': 'ListItem',
