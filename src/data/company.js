@@ -61,7 +61,7 @@ export const company = {
   // ── Verified social media ─────────────────────────────────────────────────
   social: {
     facebook: "https://www.facebook.com/riricars.co.ke/",
-    instagram: "https://www.instagram.com/riricars/",
+    instagram: "https://www.instagram.com/riricarsltd?igsi=MXVqbTg1YWFienJlaA==",
     tiktok: "https://www.tiktok.com/@riricarsltd1",
     whatsapp: "https://wa.me/254729003333",
   },

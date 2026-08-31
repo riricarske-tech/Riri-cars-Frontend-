@@ -212,9 +212,8 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MdAccessTime className="text-primary text-lg flex-shrink-0 mt-0.5" />
                 <div className="text-white/50 text-xs space-y-1">
-                  <p>Mon – Fri: 7:00 AM – 10:00 PM</p>
-                  <p>Saturday: 8:00 AM – 5:00 PM</p>
-                  <p>Sunday: Closed</p>
+                  <p>Mon to Sat 8am to 6pm</p>
+                  <p>Sunday 10am to 4pm</p>
                 </div>
               </li>
             </ul>
