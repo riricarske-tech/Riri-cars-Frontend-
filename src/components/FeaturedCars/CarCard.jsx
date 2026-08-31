@@ -44,7 +44,7 @@ export default function CarCard({ car }) {
           ) : (
             <span className="badge-used">{car.status}</span>
           )}
-          {car.condition && (
+          {car.condition && !/japan/i.test(car.condition) && (
             <span className="bg-dark-nav/90 text-white/80 text-xs font-semibold px-2 py-0.5 rounded-full flex items-center gap-1">
               <MdVerified size={10} className="text-accent" />
               {car.condition}
