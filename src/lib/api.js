@@ -32,9 +32,10 @@ async function request(path) {
 }
 
 export async function fetchVehicles({ page = 1, pageSize = 100 } = {}) {
-  const json = await request(`/api/vehicles?page=${page}&pageSize=${pageSize}`)
+  const params = new URLSearchParams({ page: String(page), pageSize: String(pageSize), available: 'true' })
+  const json = await request(`/api/vehicles?${params.toString()}`)
   const list = Array.isArray(json) ? json : json.data ?? []
-  return list.map(mapVehicle)
+  return list.filter((vehicle) => vehicle.available !== false).map(mapVehicle)
 }
 
 export async function fetchVehicleById(id) {
